@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getRedisClient } from "@/lib/cache/redis-client";
-import { v4 as uuidv4 } from "uuid";
+import { randomUUID } from "crypto";
 
 export async function POST(request: Request) {
   try {
@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     if (!email) return NextResponse.json({ error: "email required" }, { status: 400 });
 
     const redis = getRedisClient();
-    const sessionId = `sess:${uuidv4()}`;
+    const sessionId = `sess:${randomUUID()}`;
     const user = { id: `user:${Buffer.from(email).toString("base64")}`, email };
     await redis.set(sessionId, JSON.stringify(user), "EX", 60 * 60 * 24 * 7);
 

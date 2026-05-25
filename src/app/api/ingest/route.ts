@@ -1,15 +1,14 @@
 import { NextResponse } from "next/server";
 import { DEFAULT_RSS_SOURCES } from "@/lib/collectors/sources";
 import { fetchRss } from "@/lib/collectors/rss";
-import fetch from "node-fetch";
 import { extractMainContent } from "@/lib/scraper/extract";
 import { summarizeText } from "@/lib/summarize/openai";
 import { getRedisClient } from "@/lib/cache/redis-client";
-import { v4 as uuidv4 } from "uuid";
+import { randomUUID } from "crypto";
 
 async function fetchHtml(url: string) {
   try {
-    const resp = await fetch(url, { timeout: 15000 });
+    const resp = await fetch(url, { signal: AbortSignal.timeout(15000) });
     if (!resp.ok) return null;
     const text = await resp.text();
     return text;
@@ -29,7 +28,7 @@ export async function GET() {
     for (const item of items.slice(0, 6)) {
       const title = item.title || item.contentSnippet || "";
       const link = item.link || item.guid || "";
-      const id = uuidv4();
+      const id = randomUUID();
 
       const cachedKey = `elyra:story:${Buffer.from(link).toString("base64")}`;
       const exists = await redis.get(cachedKey);
