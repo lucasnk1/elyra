@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/screen.png" alt="Elyra Logo" width="160" />
+  <img src="public/logoread.png" alt="Elyra Logo" width="160" />
 </p>
 
 <p align="center">
