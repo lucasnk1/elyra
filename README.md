@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/logoread.png" alt="Elyra Logo" width="160" />
+  <img src="public/logoread.png" alt="Elyra Logo" width="400" />
 </p>
 
 <p align="center">
@@ -17,7 +17,7 @@ Built with a modern Silicon Valley-inspired product philosophy, Elyra combines i
 The goal is to transform overwhelming streams of tech information into a clean, intelligent, and beautifully curated experience.
 
 <p align="center">
-  <img src="public/printhome.png" alt="Print Home Elyra" width="160" />
+  <img src="public/printhome.png" alt="Print Home Elyra" width="1000" />
 </p>
 
 ---
