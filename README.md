@@ -2,8 +2,6 @@
   <img src="public/screen.png" alt="Elyra Logo" width="160" />
 </p>
 
-<h1 align="center">Elyra</h1>
-
 <p align="center">
   Real-time intelligence for the future of technology.
 </p>
