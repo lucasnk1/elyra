@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   description:
     "Elyra is a premium AI-powered technology news platform that curates, ranks, and summarizes the most important signals in real time.",
   metadataBase: new URL("https://elyra.news"),
+  icons: {
+    icon: "/favicon.ico?v=2",
+    shortcut: "/favicon.ico?v=2",
+    apple: "/favicon.ico?v=2",
+  },
   openGraph: {
     title: "Elyra | AI Technology News Intelligence",
     description:
@@ -38,6 +43,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
         <script
           dangerouslySetInnerHTML={{
             __html: `(() => { try { const theme = localStorage.getItem('elyra-theme'); if (theme === 'light' || theme === 'dark') { document.documentElement.dataset.theme = theme; document.documentElement.style.colorScheme = theme; } } catch (e) {} })();`,
