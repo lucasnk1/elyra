@@ -16,6 +16,10 @@ Built with a modern Silicon Valley-inspired product philosophy, Elyra combines i
 
 The goal is to transform overwhelming streams of tech information into a clean, intelligent, and beautifully curated experience.
 
+<p align="center">
+  <img src="public/printhome.png" alt="Print Home Elyra" width="160" />
+</p>
+
 ---
 
 # Features
